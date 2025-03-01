@@ -17,23 +17,24 @@ const BasicInfo = () => {
   return (
     <Box
       sx={{
-        p: 10,
+        p: { xs: 3, md: 5 },
         pb: 2,
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
-        gap: 4,
-        textAlign: "left",
+        gap: { xs: 2, md: 4 },
+        textAlign: { xs: "center", md: "left" },
         flexDirection: { xs: "column", md: "row" },
       }}
     >
-      {" "}
-      {/* Avatar in the center */}
       <Avatar
-        src={picofme} // Replace with your image path
-        sx={{ width: 200, height: 200, boxShadow: 3 }}
+        src={picofme}
+        sx={{
+          width: { xs: 120, sm: 160, md: 200 },
+          height: { xs: 120, sm: 160, md: 200 },
+          boxShadow: 3,
+        }}
       />
-      {/* Introduction Text with Typing Effect */}
       <Box
         sx={{
           display: "flex",
@@ -44,7 +45,11 @@ const BasicInfo = () => {
         <Typography
           variant="h4"
           fontWeight="bold"
-          sx={{ fontFamily: "monospace", color: "#4fc3f7" }}
+          sx={{
+            fontFamily: "monospace",
+            color: "#4fc3f7",
+            fontSize: { xs: "1.2rem", sm: "2rem", md: "2.5rem" },
+          }}
         >
           <Typewriter
             words={["Hi, I am Mohammed Shalu"]}
@@ -57,78 +62,77 @@ const BasicInfo = () => {
         </Typography>
 
         <Box>
-          <Typography
-            variant="h6"
-            color="text.secondary"
-            sx={{
-              fontFamily: "monospace",
-              color: "#ffffff",
-              display: "flex",
-              alignItems: "center",
-              gap: 1,
-            }}
-          >
-            <CodeIcon sx={{ color: "#d0e677" }} />
-            Frontend React Developer
-          </Typography>
-          <Typography
-            variant="h6"
-            color="text.secondary"
-            sx={{
-              fontFamily: "monospace",
-              color: "#ffffff",
-              display: "flex",
-              alignItems: "center",
-              gap: 1,
-            }}
-          >
-            <EngineeringIcon sx={{ color: "#03ffef" }} />
-            6+ Years of Experience
-          </Typography>
-          <Typography
-            variant="h6"
-            color="text.secondary"
-            sx={{
-              fontFamily: "monospace",
-              color: "#ffffff",
-              display: "flex",
-              alignItems: "center",
-              gap: 1,
-            }}
-          >
-            <PublicIcon sx={{ color: "#f757ce" }} />
-            Based in Kerala, India.
-          </Typography>
+          {[
+            {
+              icon: <CodeIcon sx={{ color: "#d0e677" }} />,
+              text: "Frontend React Developer",
+            },
+            {
+              icon: <EngineeringIcon sx={{ color: "#03ffef" }} />,
+              text: "6+ Years of Experience",
+            },
+            {
+              icon: <PublicIcon sx={{ color: "#f757ce" }} />,
+              text: "Based in Kerala, India.",
+            },
+          ].map((item, index) => (
+            <Typography
+              key={index}
+              variant="h6"
+              sx={{
+                fontFamily: "monospace",
+                color: "#ffffff",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: { xs: "center", md: "flex-start" },
+                gap: 1,
+                fontSize: { xs: "1rem", sm: "1.2rem" },
+              }}
+            >
+              {item.icon} {item.text}
+            </Typography>
+          ))}
         </Box>
 
         {/* Social Media Icons */}
-        <Stack direction="row" spacing={2} mt={2}>
-          <IconButton
-            href="https://www.linkedin.com/in/mohammed-shalu/"
-            target="_blank"
-            sx={{ color: "#0e76a8" }}
-          >
-            <Tooltip title="LinkedIn" placement="top" arrow>
-              <LinkedIn />
-            </Tooltip>
-          </IconButton>
-          <IconButton
-            href="https://github.com/mhmdshalus"
-            target="_blank"
-            sx={{ color: "#ffffff" }}
-          >
-            <Tooltip title="GitHub" placement="top" arrow>
-              <GitHub />
-            </Tooltip>
-          </IconButton>
-          <IconButton
-            href="mailto:mhmdshalus@gmail.com"
-            sx={{ color: "#ff3d00" }}
-          >
-            <Tooltip title="Email" placement="top" arrow>
-              <Email />
-            </Tooltip>
-          </IconButton>
+        <Stack
+          direction="row"
+          spacing={2}
+          mt={2}
+          alignItems="center"
+          justifyContent={{ xs: "center", md: "flex-start" }}
+        >
+          {[
+            {
+              icon: <LinkedIn />,
+              color: "#0e76a8",
+              link: "https://www.linkedin.com/in/mohammed-shalu/",
+              tooltip: "LinkedIn",
+            },
+            {
+              icon: <GitHub />,
+              color: "#ffffff",
+              link: "https://github.com/mhmdshalus",
+              tooltip: "GitHub",
+            },
+            {
+              icon: <Email />,
+              color: "#ff3d00",
+              link: "mailto:mhmdshalus@gmail.com",
+              tooltip: "Email",
+            },
+          ].map((item, index) => (
+            <IconButton
+              key={index}
+              href={item.link}
+              target="_blank"
+              sx={{ color: item.color }}
+            >
+              <Tooltip title={item.tooltip} placement="top" arrow>
+                {item.icon}
+              </Tooltip>
+            </IconButton>
+          ))}
         </Stack>
       </Box>
     </Box>

@@ -1,5 +1,7 @@
 import { useEffect } from "react";
 import Home from "./Home";
+import { GlobalStyles } from "@mui/material";
+import bg from "./assets/bg.png";
 
 const App: React.FC = () => {
   useEffect(() => {
@@ -59,7 +61,32 @@ const App: React.FC = () => {
     };
   }, []);
 
-  return <Home />;
+  return (
+    <>
+      <GlobalStyles
+        styles={{
+          body: {
+            backgroundImage: `url(${bg})`,
+            backgroundSize: "cover",
+            backgroundRepeat: "no-repeat",
+            backgroundPosition: "center",
+            margin: 0,
+            padding: 0,
+            minHeight: "100%",
+            display: "flex",
+            flexDirection: "column",
+            overflow: "hidden",
+          },
+          "#root": {
+            minHeight: "100%",
+            display: "flex",
+            flexDirection: "column",
+          },
+        }}
+      />
+      <Home />
+    </>
+  );
 };
 
 export default App;
