@@ -14,7 +14,8 @@ const AboutMe = () => {
   return (
     <Box
       sx={{
-        p: 10,
+        px: { xs: 2, md: 5 },
+        pt: 5,
         pb: 2,
         display: "flex",
         flexDirection: "column",
@@ -32,8 +33,12 @@ const AboutMe = () => {
         About Me
       </Typography>
       <Typography
-        variant="h6"
-        sx={{ fontFamily: "monospace", color: "#ffffff", textAlign: "justify" }}
+        sx={{
+          fontSize: { xs: "1rem", md: "1.25rem" },
+          fontFamily: "monospace",
+          color: "#ffffff",
+          textAlign: "justify",
+        }}
       >
         Hi, I'm Mohammed Shalu, a passionate Frontend React Developer with over
         6 years of experience in building responsive and dynamic web
@@ -44,8 +49,12 @@ const AboutMe = () => {
         teams to deliver high-quality software solutions.
       </Typography>
       <Typography
-        variant="h6"
-        sx={{ fontFamily: "monospace", color: "#ffffff", textAlign: "justify" }}
+        sx={{
+          fontSize: { xs: "1rem", md: "1.25rem" },
+          fontFamily: "monospace",
+          color: "#ffffff",
+          textAlign: "justify",
+        }}
       >
         My journey in technology started with a Bachelor's degree in Computer
         Science from the University of Kerala, followed by a Master's degree in
@@ -54,8 +63,12 @@ const AboutMe = () => {
         with the latest industry trends and advancements.
       </Typography>
       <Typography
-        variant="h6"
-        sx={{ fontFamily: "monospace", color: "#ffffff", textAlign: "justify" }}
+        sx={{
+          fontSize: { xs: "1rem", md: "1.25rem" },
+          fontFamily: "monospace",
+          color: "#ffffff",
+          textAlign: "justify",
+        }}
       >
         Apart from coding, I have a keen interest in gaming, cricket, and
         carroms. Watching movies and exploring new technologies also excite me.
@@ -64,8 +77,12 @@ const AboutMe = () => {
         opportunities, collaborations, and learning experiences.
       </Typography>
       <Typography
-        variant="h6"
-        sx={{ fontFamily: "monospace", color: "#ffffff", textAlign: "justify" }}
+        sx={{
+          fontSize: { xs: "1rem", md: "1.25rem" },
+          fontFamily: "monospace",
+          color: "#ffffff",
+          textAlign: "justify",
+        }}
       >
         If you'd like to connect, feel free to reach out to me via email at
         mhmdshalus@gmail.com. You can also find me on LinkedIn and GitHub.
