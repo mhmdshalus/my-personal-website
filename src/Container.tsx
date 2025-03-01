@@ -1,77 +1,102 @@
-import { Box } from "@mui/material";
-import Menu from "./Menu";
-import BasicInfo from "./BasicInfo";
-import AboutMe from "./AboutMe";
+import { Box, Typography } from "@mui/material";
 
-interface ContainerProps {
+interface MenuProps {
   itemToView: string;
-  setItemToView: (item: string) => void;
   currentView: string;
   setCurrentView: (view: string) => void;
 }
 
-const Container: React.FC<ContainerProps> = ({
-  itemToView,
-  setItemToView,
-  currentView,
-  setCurrentView,
-}) => {
+const Menu = ({ itemToView, currentView, setCurrentView }: MenuProps) => {
   return (
-    <Box
-      sx={{
-        width: { xs: "90vw", md: "65vw" },
-        maxHeight: "90vh",
-        borderRadius: 5,
-        padding: 2,
-        display: "flex",
-        textAlign: "left",
-        backgroundColor: "rgba(30, 30, 30, 0.8)",
-        color: "#ffffff",
-        filter: "none",
-        flexDirection: "column",
-        overflow: "auto",
-      }}
-    >
+    !currentView && (
       <Box
         sx={{
-          position: "absolute",
           width: "100%",
           display: "flex",
-          gap: 1,
+          justifyContent: "center",
+          alignItems: "center",
+          gap: 3,
           paddingBottom: 1,
         }}
       >
-        <Box
-          sx={{
-            width: 12,
-            height: 12,
-            backgroundColor: "#ff5f56",
-            borderRadius: "50%",
-          }}
-        />
-        <Box
-          sx={{
-            width: 12,
-            height: 12,
-            backgroundColor: "#ffbd2e",
-            borderRadius: "50%",
-          }}
-        />
-        <Box
-          sx={{
-            width: 12,
-            height: 12,
-            backgroundColor: "#27c93f",
-            borderRadius: "50%",
-          }}
-        />
-      </Box>
-      {itemToView === "basic-info" && <BasicInfo />}
-      {itemToView === "about-me" && <AboutMe />}
+        {itemToView !== "basic-info" && (
+          <>
+            <Typography
+              color="text.secondary"
+              sx={{
+                fontFamily: '"Press Start 2P", monospace',
+                color: "#ffffff",
+                display: "flex",
+                alignItems: "center",
+                gap: 1,
+                cursor: "pointer",
+                padding: "8px 16px",
+                borderRadius: "4px",
+                transition: "all 0.3s ease",
+                position: "relative",
+                fontSize: "12px",
+                textTransform: "uppercase",
+                letterSpacing: "1px",
+                textShadow: "2px 2px 0px #000, 3px 3px 0px #4fc3f7",
+                "&:hover": {
+                  color: "#4fc3f7",
+                  textShadow: "2px 2px 0px #000, 4px 4px 0px #4fc3f7",
+                  "&::after": {
+                    content: '"<Home />"',
+                  },
+                },
+                "&::after": {
+                  content: '"Home"',
+                  transition: "content 0.3s ease",
+                },
+              }}
+              onClick={() => {
+                setCurrentView("git checkout home");
+              }}
+            />
+          </>
+        )}
 
-      <Menu {...{ itemToView, setItemToView, currentView, setCurrentView }} />
-    </Box>
+        {itemToView !== "about-me" && (
+          <>
+            <Typography
+              color="text.secondary"
+              sx={{
+                fontFamily: '"Press Start 2P", monospace',
+                color: "#ffffff",
+                display: "flex",
+                alignItems: "center",
+                gap: 1,
+                cursor: "pointer",
+                padding: "8px 16px",
+                borderRadius: "4px",
+                transition: "all 0.3s ease",
+                position: "relative",
+                fontSize: "12px",
+                textTransform: "uppercase",
+                letterSpacing: "1px",
+                textShadow: "2px 2px 0px #000, 3px 3px 0px #4fc3f7",
+                "&:hover": {
+                  color: "#4fc3f7",
+                  textShadow: "2px 2px 0px #000, 4px 4px 0px #4fc3f7",
+                  "&::after": {
+                    content: '"<About me />"',
+                  },
+                },
+                "&::after": {
+                  content: '"About me"',
+                  transition: "content 0.3s ease",
+                },
+              }}
+              onClick={() => {
+                setCurrentView("git checkout about-me");
+              }}
+            />
+          </>
+        )}
+      </Box>
+    )
   );
 };
 
-export default Container;
+export default Menu;
