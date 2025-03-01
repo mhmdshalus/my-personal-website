@@ -1,7 +1,11 @@
 import { Box, Typography } from "@mui/material";
 import { Typewriter } from "react-simple-typewriter";
 
-const Terminal = ({ currentView }) => {
+interface TerminalProps {
+  currentView: string;
+}
+
+const Terminal = ({ currentView }: TerminalProps) => {
   return (
     currentView && (
       <Box
