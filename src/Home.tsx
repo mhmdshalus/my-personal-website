@@ -1,5 +1,4 @@
 import { Box } from "@mui/material";
-import bg from "./assets/bg.png";
 import Terminal from "./Terminal";
 import Container from "./Container";
 import { useEffect, useState } from "react";
@@ -27,10 +26,6 @@ const Home = () => {
   return (
     <Box
       sx={{
-        backgroundImage: `url(${bg})`,
-        backgroundSize: "cover",
-        backgroundRepeat: "no-repeat",
-        backgroundPosition: "center",
         minHeight: "100vh",
         display: "flex",
         flexDirection: "column",
