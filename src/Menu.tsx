@@ -1,6 +1,12 @@
 import { Box, Typography } from "@mui/material";
 
-const Menu = ({ itemToView, currentView, setCurrentView }) => {
+interface MenuProps {
+  itemToView: string;
+  currentView: string;
+  setCurrentView: (view: string) => void;
+}
+
+const Menu = ({ itemToView, currentView, setCurrentView }: MenuProps) => {
   return (
     !currentView && (
       <Box
