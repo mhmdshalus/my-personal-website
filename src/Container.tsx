@@ -3,7 +3,14 @@ import Menu from "./Menu";
 import BasicInfo from "./BasicInfo";
 import AboutMe from "./AboutMe";
 
-const Container = ({
+interface ContainerProps {
+  itemToView: string;
+  setItemToView: (item: string) => void;
+  currentView: string;
+  setCurrentView: (view: string) => void;
+}
+
+const Container: React.FC<ContainerProps> = ({
   itemToView,
   setItemToView,
   currentView,
