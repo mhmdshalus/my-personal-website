@@ -8,7 +8,7 @@ import {
 } from "@mui/material";
 import { LinkedIn, GitHub, Email } from "@mui/icons-material";
 import picofme from "./assets/picofme2.png";
-import ArticleIcon from "@mui/icons-material/Article";
+// import ArticleIcon from "@mui/icons-material/Article";
 
 const AboutMe = () => {
   return (
@@ -114,7 +114,7 @@ const AboutMe = () => {
             <Email />
           </Tooltip>
         </IconButton>{" "}
-        <IconButton
+        {/* <IconButton
           href="https://docs.google.com/document/d/1RiuToTafYqkeLPAxIlt1PKsMG_nUU8h1ZrlOXq-PWvU/edit?usp=sharing"
           target="_blank"
           sx={{ color: "#d0e677" }}
@@ -122,7 +122,7 @@ const AboutMe = () => {
           <Tooltip title="View resume" placement="top" arrow>
             <ArticleIcon />
           </Tooltip>
-        </IconButton>
+        </IconButton> */}
       </Stack>
     </Box>
   );
