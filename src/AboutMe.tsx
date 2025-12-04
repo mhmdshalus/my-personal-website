@@ -8,6 +8,7 @@ import {
 } from "@mui/material";
 import { LinkedIn, GitHub, Email } from "@mui/icons-material";
 import picofme from "./assets/picofme2.png";
+import { getExperienceYears } from "./utils/utils";
 // import ArticleIcon from "@mui/icons-material/Article";
 
 const AboutMe = () => {
@@ -41,12 +42,13 @@ const AboutMe = () => {
         }}
       >
         Hi, I'm Mohammed Shalu, a passionate Frontend React Developer with over
-        6 years of experience in building responsive and dynamic web
-        applications. I specialize in React.js, Next.js, and TypeScript,
-        crafting visually appealing and performant user interfaces using modern
-        frameworks like Tailwind CSS, MUI, and Bootstrap. I enjoy solving
-        complex front-end challenges and collaborating with cross-functional
-        teams to deliver high-quality software solutions.
+        {` ${getExperienceYears("2018-10-10")} `} years of experience in
+        building responsive and dynamic web applications. I specialize in
+        React.js, Next.js, and TypeScript, crafting visually appealing and
+        performant user interfaces using modern frameworks like Tailwind CSS,
+        MUI, and Bootstrap. I enjoy solving complex front-end challenges and
+        collaborating with cross-functional teams to deliver high-quality
+        software solutions.
       </Typography>
       <Typography
         sx={{

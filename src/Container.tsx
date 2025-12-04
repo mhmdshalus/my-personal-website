@@ -2,6 +2,7 @@ import { Box } from "@mui/material";
 import Menu from "./Menu";
 import BasicInfo from "./BasicInfo";
 import AboutMe from "./AboutMe";
+import ResumePage from "./ResumePage";
 
 interface ContainerProps {
   itemToView: string;
@@ -68,6 +69,7 @@ const Container: React.FC<ContainerProps> = ({
       </Box>
       {itemToView === "basic-info" && <BasicInfo />}
       {itemToView === "about-me" && <AboutMe />}
+      {itemToView === "resume" && <ResumePage />}
 
       <Menu {...{ itemToView, setItemToView, currentView, setCurrentView }} />
     </Box>

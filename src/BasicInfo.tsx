@@ -12,6 +12,7 @@ import PublicIcon from "@mui/icons-material/Public";
 import EngineeringIcon from "@mui/icons-material/Engineering";
 import { Typewriter } from "react-simple-typewriter";
 import picofme from "./assets/picofme2.png";
+import { getExperienceYears } from "./utils/utils";
 
 const BasicInfo = () => {
   return (
@@ -69,7 +70,7 @@ const BasicInfo = () => {
             },
             {
               icon: <EngineeringIcon sx={{ color: "#03ffef" }} />,
-              text: "6+ Years of Experience",
+              text: `${getExperienceYears("2018-10-10")} Years of Experience`,
             },
             {
               icon: <PublicIcon sx={{ color: "#f757ce" }} />,

@@ -94,6 +94,44 @@ const Menu = ({ itemToView, currentView, setCurrentView }: MenuProps) => {
             />
           </>
         )}
+
+        {itemToView !== "resume" && (
+          <>
+            <Typography
+              color="text.secondary"
+              sx={{
+                fontFamily: '"Press Start 2P", monospace',
+                color: "#ffffff",
+                display: "flex",
+                alignItems: "center",
+                gap: 1,
+                cursor: "pointer",
+                padding: "8px 16px",
+                borderRadius: "4px",
+                transition: "all 0.3s ease",
+                position: "relative",
+                fontSize: "12px",
+                textTransform: "uppercase",
+                letterSpacing: "1px",
+                textShadow: "2px 2px 0px #000, 3px 3px 0px #4fc3f7",
+                "&:hover": {
+                  color: "#4fc3f7",
+                  textShadow: "2px 2px 0px #000, 4px 4px 0px #4fc3f7",
+                  "&::after": {
+                    content: '"<Resume />"',
+                  },
+                },
+                "&::after": {
+                  content: '"Resume"',
+                  transition: "content 0.3s ease",
+                },
+              }}
+              onClick={() => {
+                setCurrentView("git checkout resume");
+              }}
+            />
+          </>
+        )}
       </Box>
     )
   );

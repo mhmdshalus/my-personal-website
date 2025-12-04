@@ -16,6 +16,10 @@ const Home = () => {
         if (currentView === "git checkout about-me") {
           setItemToView("about-me");
         }
+        if (currentView === "git checkout resume") {
+          setItemToView("resume");
+        }
+
         setCurrentView("");
       }, 2500);
 
