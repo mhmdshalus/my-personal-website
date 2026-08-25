@@ -19,6 +19,7 @@ export default function ResumePage() {
 
   return (
     <Box
+      className="resume-page"
       sx={{
         p: 4,
         maxWidth: 900,
