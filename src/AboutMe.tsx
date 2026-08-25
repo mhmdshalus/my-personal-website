@@ -1,133 +1,55 @@
-import {
-  Avatar,
-  Box,
-  Typography,
-  IconButton,
-  Stack,
-  Tooltip,
-} from "@mui/material";
-import { LinkedIn, GitHub, Email } from "@mui/icons-material";
+import { Avatar, Box, Chip, IconButton, Stack, Tooltip, Typography } from "@mui/material";
+import { CodeRounded, Email, GitHub, LanguageRounded, LinkedIn, SchoolRounded, SportsEsportsRounded } from "@mui/icons-material";
 import picofme from "./assets/picofme2.png";
 import { getExperienceYears } from "./utils/utils";
-// import ArticleIcon from "@mui/icons-material/Article";
 
-const AboutMe = () => {
-  return (
-    <Box
-      sx={{
-        px: { xs: 2, md: 5 },
-        pt: 5,
-        pb: 2,
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        textAlign: "center",
-        gap: 3,
-      }}
-    >
-      <Avatar src={picofme} sx={{ width: 150, height: 150, boxShadow: 3 }} />
-      <Typography
-        variant="h4"
-        fontWeight="bold"
-        sx={{ fontFamily: "monospace", color: "#4fc3f7" }}
-      >
-        About Me
-      </Typography>
-      <Typography
-        sx={{
-          fontSize: { xs: "1rem", md: "1.25rem" },
-          fontFamily: "monospace",
-          color: "#ffffff",
-          textAlign: "justify",
-        }}
-      >
-        Hi, I'm Mohammed Shalu, a passionate Frontend React Developer with over
-        {` ${getExperienceYears("2018-10-10")} `} years of experience in
-        building responsive and dynamic web applications. I specialize in
-        React.js, Next.js, and TypeScript, crafting visually appealing and
-        performant user interfaces using modern frameworks like Tailwind CSS,
-        MUI, and Bootstrap. I enjoy solving complex front-end challenges and
-        collaborating with cross-functional teams to deliver high-quality
-        software solutions.
-      </Typography>
-      <Typography
-        sx={{
-          fontSize: { xs: "1rem", md: "1.25rem" },
-          fontFamily: "monospace",
-          color: "#ffffff",
-          textAlign: "justify",
-        }}
-      >
-        My journey in technology started with a Bachelor's degree in Computer
-        Science from the University of Kerala, followed by a Master's degree in
-        Computer Applications. Since then, I have worked on various projects. I
-        am constantly learning and expanding my knowledge to stay up-to-date
-        with the latest industry trends and advancements.
-      </Typography>
-      <Typography
-        sx={{
-          fontSize: { xs: "1rem", md: "1.25rem" },
-          fontFamily: "monospace",
-          color: "#ffffff",
-          textAlign: "justify",
-        }}
-      >
-        Apart from coding, I have a keen interest in gaming, cricket, and
-        carroms. Watching movies and exploring new technologies also excite me.
-        I am fluent in English and Malayalam, which allows me to connect with
-        diverse audiences. Based in Kerala, India, I am open to new
-        opportunities, collaborations, and learning experiences.
-      </Typography>
-      <Typography
-        sx={{
-          fontSize: { xs: "1rem", md: "1.25rem" },
-          fontFamily: "monospace",
-          color: "#ffffff",
-          textAlign: "justify",
-        }}
-      >
-        If you'd like to connect, feel free to reach out to me via email at
-        mhmdshalus@gmail.com. You can also find me on LinkedIn and GitHub.
-      </Typography>
-      <Stack direction="row" spacing={2} mt={2}>
-        <IconButton
-          href="https://www.linkedin.com/in/mohammed-shalu/"
-          target="_blank"
-          sx={{ color: "#0e76a8" }}
-        >
-          <Tooltip title="LinkedIn" placement="top" arrow>
-            <LinkedIn />
-          </Tooltip>
-        </IconButton>
-        <IconButton
-          href="https://github.com/mhmdshalus"
-          target="_blank"
-          sx={{ color: "#ffffff" }}
-        >
-          <Tooltip title="GitHub" placement="top" arrow>
-            <GitHub />
-          </Tooltip>
-        </IconButton>
-        <IconButton
-          href="mailto:mhmdshalus@gmail.com"
-          sx={{ color: "#ff3d00" }}
-        >
-          <Tooltip title="Email" placement="top" arrow>
-            <Email />
-          </Tooltip>
-        </IconButton>{" "}
-        {/* <IconButton
-          href="https://docs.google.com/document/d/1RiuToTafYqkeLPAxIlt1PKsMG_nUU8h1ZrlOXq-PWvU/edit?usp=sharing"
-          target="_blank"
-          sx={{ color: "#d0e677" }}
-        >
-          <Tooltip title="View resume" placement="top" arrow>
-            <ArticleIcon />
-          </Tooltip>
-        </IconButton> */}
-      </Stack>
+const skills = ["React", "TypeScript", "Next.js", "JavaScript", "Tailwind CSS", "MUI", "REST APIs", "AWS"];
+
+const AboutMe = () => (
+  <Box className="about-page">
+    <Box className="about-heading">
+      <div className="eyebrow"><span /> BEYOND THE CODE</div>
+      <Typography component="h1">A developer who cares about the <em>details.</em></Typography>
+      <Typography>I combine thoughtful design with reliable engineering to build interfaces people genuinely enjoy using.</Typography>
     </Box>
-  );
-};
+
+    <Box className="about-grid">
+      <aside className="profile-card">
+        <div className="profile-image"><Avatar src={picofme} alt="Mohammed Shalu" /></div>
+        <Typography component="h2">Mohammed Shalu</Typography>
+        <Typography className="profile-role">Senior Frontend Engineer</Typography>
+        <div className="profile-meta"><span>Kerala, India</span><i /> <span>{getExperienceYears("2018-10-10")}+ years experience</span></div>
+        <Stack direction="row" className="about-socials">
+          <Tooltip title="LinkedIn"><IconButton href="https://www.linkedin.com/in/mohammed-shalu/" target="_blank" aria-label="LinkedIn"><LinkedIn /></IconButton></Tooltip>
+          <Tooltip title="GitHub"><IconButton href="https://github.com/mhmdshalus" target="_blank" aria-label="GitHub"><GitHub /></IconButton></Tooltip>
+          <Tooltip title="Email"><IconButton href="mailto:mhmdshalus@gmail.com" aria-label="Email"><Email /></IconButton></Tooltip>
+        </Stack>
+      </aside>
+
+      <Box className="about-story">
+        <section className="story-card main-story">
+          <div className="section-label"><CodeRounded /> MY STORY</div>
+          <Typography>
+            I’m a frontend engineer with over {getExperienceYears("2018-10-10")} years of experience turning complex product ideas into responsive, accessible web applications. My work lives at the intersection of clean design and maintainable code, with React and TypeScript at the center of my toolkit.
+          </Typography>
+          <Typography>
+            I enjoy solving tricky interface challenges, improving performance, and collaborating with designers and engineers to ship experiences that feel simple—even when the systems behind them are not.
+          </Typography>
+        </section>
+
+        <section className="story-card skills-card">
+          <div className="section-label"><CodeRounded /> TOOLKIT</div>
+          <Box className="skill-list">{skills.map((skill) => <Chip key={skill} label={skill} />)}</Box>
+        </section>
+
+        <Box className="mini-card-grid">
+          <section className="story-card mini-card"><SchoolRounded /><div><strong>Always learning</strong><span>MCA &amp; BSc Computer Science, University of Kerala</span></div></section>
+          <section className="story-card mini-card"><SportsEsportsRounded /><div><strong>Beyond work</strong><span>Gaming, cricket, carrom and movies</span></div></section>
+          <section className="story-card mini-card"><LanguageRounded /><div><strong>Languages</strong><span>English and Malayalam</span></div></section>
+        </Box>
+      </Box>
+    </Box>
+  </Box>
+);
 
 export default AboutMe;
